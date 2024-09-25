@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Taskify</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Taskify - Track Your Progress.</h1>
+      <div class="input-box">
+        <input
+          class="title-input"
+          type="text"
+          placeholder="Type Your Task Title"
+        />
+        <input
+          class="desc-input"
+          type="text"
+          placeholder="Type Your Task Description"
+        />
+        <div class="input-bottom">
+          <select name="priority" id="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <button class="add-task-btn" onclick="addTodo()">
+            Add Your Task
+          </button>
+        </div>
+      </div>
+      <div class="main-body">
+        <div
+          class="box todo"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <span class="title">To do</span>
+          <div id="todo-list" class="task-list"></div>
+        </div>
+        <div
+          class="box progress"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <span class="title">In Progress</span>
+          <div id="progress-list" class="task-list"></div>
+        </div>
+        <div
+          class="box review"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <span class="title">Under Review</span>
+          <div id="review-list" class="task-list"></div>
+        </div>
+        <div
+          class="box completed"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <span class="title">Completed</span>
+          <div id="completed-list" class="task-list"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
